@@ -4,7 +4,7 @@
   "description": "a nodejs mall back-end project",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node app.js"
   },
   "author": "Bowiego",
   "license": "MIT",
