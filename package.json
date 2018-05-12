@@ -9,6 +9,13 @@
   "author": "Bowiego",
   "license": "MIT",
   "dependencies": {
-    "koa": "^2.5.1"
-  }
+    "bcryptjs": "^2.4.3",
+    "config": "^1.30.0",
+    "koa": "^2.5.1",
+    "koa-body": "^2.5.0",
+    "koa-router": "^7.3.0",
+    "koa-validate": "^1.0.7",
+    "mongoose": "^4.13.7"
+  },
+  "devDependencies": {}
 }
