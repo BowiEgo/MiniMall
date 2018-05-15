@@ -9,7 +9,7 @@ const routerConfig = require('./api')
 const app = new Koa()
 
 validate(app)
-
+      
 app
 .use(koaBody())
 .use(middleware.common)
