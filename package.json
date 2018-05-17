@@ -4,7 +4,7 @@
   "description": "a nodejs mall back-end project",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "babel-node app.js"
   },
   "author": "Bowiego",
   "license": "MIT",
@@ -17,5 +17,9 @@
     "koa-validate": "^1.0.7",
     "mongoose": "^4.13.7"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1"
+  }
 }

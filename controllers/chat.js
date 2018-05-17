@@ -1,21 +1,27 @@
 'use strict'
-const p = require('../proxy')
-// const ft = require('../models/fields_table')
+import p from '../proxy'
 
 const chatProxy = p.Chat
 
-exports.getByChatId = (chatId) => {
+const getByChatId = (chatId) => {
   return chatProxy.getByChatId(chatId)
 }
 
-exports.getByUserId = (userId) => {
+const getByUserId = (userId) => {
   return chatProxy.getByUserId(userId)
 }
 
-exports.newAndSave = (userId) => {
+const newAndSave = (userId) => {
   return chatProxy.newAndSave(userId)
 }
 
-exports.addDialogue = (chatId, dialogue) => {
+const addDialogue = (chatId, dialogue) => {
   return chatProxy.addDialogue(chatId, dialogue)
+}
+
+export default {
+  getByChatId,
+  getByUserId,
+  newAndSave,
+  addDialogue
 }

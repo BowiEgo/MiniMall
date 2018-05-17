@@ -1,11 +1,19 @@
 'use strict'
-const _ = require('lodash')
-const m = require('../models')
-const config = require('config')
+import _ from 'lodash'
+import m from '../models'
+import config from 'config'
 
 const UserModel = m.User
 
-exports.newAndSave = (name, password, nickName, headImg) => {
+/**
+ * 新建一个用户
+ * @param  {String} name
+ * @param  {String} password
+ * @param  {String} nickName
+ * @param  {String} headImg
+ * @return {Function}          
+*/
+const newAndSave = (name, password, nickName, headImg) => {
   const user = new UserModel()
   const len = config.get('gravatar').length
 
@@ -17,15 +25,36 @@ exports.newAndSave = (name, password, nickName, headImg) => {
   return user.save()
 }
 
-exports.getByName = (userName) => {
+/**
+ * 根据用户名查询一个用户
+ * @param  {String} userName
+ * @return {Function}    
+ */
+const getByName = (userName) => {
   console.log('getByName: ', userName)
   return UserModel.findOne({ name: userName })
 }
 
-exports.getById = (userId) => {
+/**
+ * 根据userId查询一个用户
+ * @param  {String} userId
+ * @return {Function}
+ */
+const getById = (userId) => {
   return UserModel.findById(userId)
 }
 
-exports.getAll = () => {
+/**
+ * 获取所有用户列表
+ * @return {Function}    
+ */
+const getAll = () => {
   return UserModel.find()
+}
+
+export default {
+  newAndSave,
+  getByName,
+  getById,
+  getAll
 }

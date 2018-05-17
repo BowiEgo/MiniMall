@@ -1,7 +1,7 @@
 'use strict'
-const _ = require('lodash')
-const m = require('../models')
-const config = require('config')
+import _ from 'lodash'
+import m from '../models'
+import config from 'config'
 
 const ChatModel = m.Chat
 
@@ -28,7 +28,9 @@ const addDialogue = (chatId, dialogue) => {
   })
 }
 
-exports.getByChatId = getByChatId
-exports.getByUserId = getByUserId
-exports.newAndSave = newAndSave
-exports.addDialogue = addDialogue
+export default {
+  getByChatId,
+  getByUserId,
+  newAndSave,
+  addDialogue
+}

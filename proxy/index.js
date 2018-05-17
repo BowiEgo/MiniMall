@@ -1,4 +1,9 @@
 'use strict'
+import User from './user'
+import Goods from './goods'
+// exports.User = require('./user')
 
-exports.User = require('./user')
-exports.Chat = require('./chat')
+export default {
+  User,
+  Goods
+}

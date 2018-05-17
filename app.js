@@ -1,10 +1,10 @@
-const http = require('http')
-const Koa = require('koa')
-const koaBody = require('koa-body')
-const validate = require('koa-validate')
+import http from 'http'
+import Koa from 'koa'
+import koaBody from 'koa-body'
+import validate from 'koa-validate'
 
-const middleware = require('./middlewares')
-const routerConfig = require('./api')
+import middleware from './middlewares'
+import routerConfig from './api'
 
 const app = new Koa()
 

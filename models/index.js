@@ -1,7 +1,10 @@
 'use strict'
 
-const mongoose = require('mongoose')
-const config = require('config')
+import mongoose from 'mongoose'
+import config from 'config'
+
+import User from './user'
+import Goods from './goods'
 
 /* ? */
 mongoose.Promise = global.Promise
@@ -23,5 +26,7 @@ database.then(
   }
 )
 
-exports.User = require('./user')
-exports.Chat = require('./chat')
+export default {
+  User,
+  Goods
+}

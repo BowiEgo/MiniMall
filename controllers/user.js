@@ -1,13 +1,12 @@
 'use strict'
-const _ = require('lodash')
-
-const p = require('../proxy')
-const util = require('../util')
-const ft = require('../models/fields_table')
+import p from '../proxy'
+import _ from 'lodash'
+import util from '../util'
+import ft from '../models/fields_table'
 
 const userProxy = p.User
 
-exports.register = async (ctx, next) => {
+const register = async (ctx, next) => {
   const name = ctx.checkBody('username').notEmpty().len(4, 20).value
   const password = ctx.checkBody('password').notEmpty().len(6, 20).value
 
@@ -37,7 +36,7 @@ exports.register = async (ctx, next) => {
   ctx.body = ctx.util.resuccess({data: _.pick(user, ft.user), message: '注册成功'})
 }
 
-exports.login = async (ctx, next) => {
+const login = async (ctx, next) => {
   const name = ctx.checkBody('username').notEmpty().len(4, 20).value
   const password = ctx.checkBody('password').notEmpty().len(6, 20).value
   
@@ -79,10 +78,10 @@ exports.login = async (ctx, next) => {
   ctx.body = ctx.util.resuccess({data: _.pick(user, ft.user), message: '登陆成功'})
 }
 
-exports.logout = async (ctx, next) => {
+const logout = async (ctx, next) => {
 }
 
-exports.search = async (ctx, next) => {
+const search = async (ctx, next) => {
   const name = ctx.checkBody('username').notEmpty().len(4, 20).value
 
   let user = await userProxy.getByName(name)
@@ -95,11 +94,19 @@ exports.search = async (ctx, next) => {
   ctx.body = ctx.util.resuccess({data: _.pick(user, ft.user), message: '查找成功'})
 }
 
-exports.list = async (ctx, next) => {
+const list = async (ctx, next) => {
   let user = await userProxy.getAll()
 
   ctx.body = ctx.util.resuccess({
     data: user.map(item => _.pick(item, ft.user)),
     message: '查找成功'
   })
+}
+
+export default {
+  register,
+  login,
+  logout,
+  search,
+  list
 }
