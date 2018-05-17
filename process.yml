@@ -1,10 +1,8 @@
 apps:
   - script   : app.js
     instances: 4
-    exec_mode: cluster
-  - script : worker.js
+    exec_interpreter: babel-node
+    exec_mode: fork_mode
     watch  : true
     env    :
       NODE_ENV: development
-    env_production:
-      NODE_ENV: production
