@@ -5,6 +5,8 @@ import config from 'config'
 
 import User from './user'
 import Goods from './goods'
+import Category from './category'
+import CategoryItem from './category-item'
 
 /* ? */
 mongoose.Promise = global.Promise
@@ -28,5 +30,7 @@ database.then(
 
 export default {
   User,
-  Goods
+  Goods,
+  Category,
+  CategoryItem
 }

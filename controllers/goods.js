@@ -8,16 +8,30 @@ const goodsProxy = p.Goods
 
 const post = async (ctx, next) => {
   const name = ctx.checkBody('name').notEmpty().value
-  const types = ctx.checkBody('types').notEmpty().value
-  const images = ctx.checkBody('images').value
-  const price = ctx.checkBody('price').value
-  const stock = ctx.checkBody('stock').value
-  const remark = ctx.checkBody('remark').value
-  
+  const category = ctx.checkBody('category').notEmpty().value
+  const title = ctx.checkBody('title').notEmpty().value
+  const tags = ctx.checkBody('tags').notEmpty().value
+  const price = ctx.checkBody('price').notEmpty().value
+  const discount = ctx.checkBody('discount').notEmpty().value
+  const stock = ctx.checkBody('stock').notEmpty().value
+  const images = ctx.checkBody('images').notEmpty().value
+  const detail = ctx.checkBody('detail').notEmpty().value
+  const remark = ctx.checkBody('remark').notEmpty().value
+  const specs = ctx.checkBody('specs').optional().len(0, 10).value
+
   if (ctx.errors) {
     let message = ctx.errors.map(item => {
       if (item.name === 'name can not be empty.') item.name = '商品名不能为空'
-      if (item.types === 'types can not be empty.') item.types = '商品类型不能为空'
+      if (item.category === 'category can not be empty.') item.category = '商品类型不能为空'
+      if (item.title === 'title can not be empty.') item.title = '商品标题不能为空'
+      if (item.tags === 'tags can not be empty.') item.tags = '商品标签不能为空'
+      if (item.price === 'price can not be empty.') item.price = '商品价格不能为空'
+      if (item.discount === 'discount can not be empty.') item.discount = '商品折扣不能为空'
+      if (item.stock === 'stock can not be empty.') item.stock = '商品总量不能为空'
+      if (item.preview === 'images can not be empty.') item.preview = '商品主图不能为空'
+      if (item.images === 'images can not be empty.') item.images = '商品轮播图不能为空'
+      if (item.detail === 'detail can not be empty.') item.detail = '商品详情不能为空'
+      if (item.remark === 'remark can not be empty.') item.remark = '商品备注不能为空'
       return item
     })
     ctx.body = ctx.util.refail({ code: 10001, data: null, message: message })
@@ -33,11 +47,22 @@ const post = async (ctx, next) => {
 
   const body = {
     name: name,
-    types: types,
-    images: images,
+    category: category,
+    title: title,
+    tags: tags,
     price: price,
+    discount: discount,
     stock: stock,
-    remark: remark
+    preview: preview,
+    images: images,
+    detail: detail,
+    remark: remark,
+    specs: specs || [
+      {
+        id: '000',
+        spec_list: ['001', '002', '003']
+      }
+    ]
   }
 
   await goodsProxy.newAndSave(body)
@@ -57,7 +82,7 @@ const update = async (ctx, next) => {
   }
   const data = ctx.checkBody('data').value
   const name = ctx.checkBody('#/data/name', true).get(0).notEmpty().value
-  const types = ctx.checkBody('#/data/types', true).get(0).notEmpty().value
+  const category = ctx.checkBody('#/data/category', true).get(0).notEmpty().value
   const images = ctx.checkBody('#/data/images', true).get(0).value || ['']
   const price = ctx.checkBody('#/data/price', true).get(0).value || '0.00'
   const stock = ctx.checkBody('#/data/stock', true).get(0).value || 0
@@ -66,7 +91,7 @@ const update = async (ctx, next) => {
   if (ctx.errors) {
     let message = ctx.errors.map(item => {
       if (item.name === 'name can not be empty.') item.name = '商品名不能为空'
-      if (item.types === 'types can not be empty.') item.types = '商品类型不能为空'
+      if (item.category === 'category can not be empty.') item.category = '商品类型不能为空'
       return item
     })
     ctx.body = ctx.util.refail({ code: 10001, data: null, message: message })
@@ -75,7 +100,7 @@ const update = async (ctx, next) => {
 
   const body = {
     name: name,
-    types: types,
+    category: category,
     images: images,
     price: price,
     stock: stock,

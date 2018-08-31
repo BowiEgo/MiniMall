@@ -1,0 +1,48 @@
+[2018-08-29T13:04:03.911] [INFO] log_file - log4j started
+[2018-08-29T13:04:03.913] [INFO] log_date - log4j_date started
+[2018-08-29T13:04:03.925] [DEBUG] log_file - Got cheese.
+[2018-08-29T13:04:03.926] [INFO] log_file - Cheese is Gouda.
+[2018-08-29T13:04:03.926] [WARN] log_file - Cheese is quite smelly.
+[2018-08-29T13:04:03.926] [ERROR] log_file - Cheese is too ripe!
+[2018-08-29T13:04:03.926] [FATAL] log_file - Cheese was breeding ground for listeria.
+[2018-08-29T13:04:03.984] [INFO] log_file - Server listening at port 3000
+[2018-08-29T13:09:25.615] [INFO] log_file - log4j started
+[2018-08-29T13:09:25.617] [INFO] log_date - log4j_date started
+[2018-08-29T13:09:25.628] [DEBUG] log_file - Got cheese.
+[2018-08-29T13:09:25.628] [INFO] log_file - Cheese is Gouda.
+[2018-08-29T13:09:25.628] [WARN] log_file - Cheese is quite smelly.
+[2018-08-29T13:09:25.628] [ERROR] log_file - Cheese is too ripe!
+[2018-08-29T13:09:25.628] [FATAL] log_file - Cheese was breeding ground for listeria.
+[2018-08-29T13:09:25.684] [INFO] log_file - Server listening at port 3000
+[2018-08-29T13:10:18.797] [INFO] console - log4j started
+[2018-08-29T13:10:18.799] [INFO] log_date - log4j_date started
+[2018-08-29T13:10:18.810] [DEBUG] console - Got cheese.
+[2018-08-29T13:10:18.810] [INFO] console - Cheese is Gouda.
+[2018-08-29T13:10:18.810] [WARN] console - Cheese is quite smelly.
+[2018-08-29T13:10:18.810] [ERROR] console - Cheese is too ripe!
+[2018-08-29T13:10:18.811] [FATAL] console - Cheese was breeding ground for listeria.
+[2018-08-29T13:10:18.866] [INFO] console - Server listening at port 3000
+[2018-08-29T13:10:35.129] [INFO] log_file - log4j started
+[2018-08-29T13:10:35.132] [INFO] log_date - log4j_date started
+[2018-08-29T13:10:35.147] [DEBUG] log_file - Got cheese.
+[2018-08-29T13:10:35.147] [INFO] log_file - Cheese is Gouda.
+[2018-08-29T13:10:35.147] [WARN] log_file - Cheese is quite smelly.
+[2018-08-29T13:10:35.147] [ERROR] log_file - Cheese is too ripe!
+[2018-08-29T13:10:35.148] [FATAL] log_file - Cheese was breeding ground for listeria.
+[2018-08-29T13:10:35.203] [INFO] log_file - Server listening at port 3000
+[2018-08-29T13:23:11.700] [INFO] log_file - log4j started
+[2018-08-29T13:23:11.702] [INFO] log_date - log4j_date started
+[2018-08-29T13:23:11.847] [INFO] log_file - Server listening at port 3000
+[2018-08-29T13:24:15.393] [INFO] log_file - log4j started
+[2018-08-29T13:24:15.396] [INFO] log_date - log4j_date started
+[2018-08-29T13:24:15.466] [INFO] log_file - Server listening at port 3000
+[2018-08-29T13:25:48.777] [INFO] log_file - Server listening at port 3000
+[2018-08-29T13:27:20.021] [INFO] log_file - Server listening at port 3000
+[2018-08-29T13:28:16.187] [INFO] log_file - Server listening at port 3000
+[2018-08-29T13:28:33.656] [INFO] log_file - Server listening at port 3000
+[2018-08-29T13:29:40.448] [INFO] log_file - Server listening at port 3000
+[2018-08-29T13:30:10.883] [INFO] log_file - Server listening at port 3000
+[2018-08-29T13:35:52.781] [INFO] log_file - Server listening at port 3000
+[2018-08-30T09:51:55.178] [INFO] log_file - Server listening at port 3000
+[2018-08-30T15:29:09.133] [INFO] log_file - Server listening at port 3000
+[2018-08-30T16:35:25.336] [INFO] log_file - Server listening at port 3000
